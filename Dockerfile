@@ -4,10 +4,11 @@ USER root
 
 WORKDIR /project
 COPY  . /project
-
-CMD ["gradle","build"]
-WORKDIR /project
+WORKDIR /wardir
 VOLUME /home/gradlehome
-CMD ["gradle","deploylocal"]
+WORKDIR /project
+CMD ["gradle","build"]
+
+
 
 

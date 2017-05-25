@@ -1,6 +1,7 @@
 group 'com.cn.web'
 version '1.0-SNAPSHOT'
 
+
 buildscript {
     ext {
         springBootVersion = '1.4.2.RELEASE'
@@ -20,6 +21,15 @@ apply plugin: 'war'
 
 
 
+
+build.doLast {
+    print("sdljfdlsfjdskl")
+    copy {
+        from "${buildDir}\\libs\\exploded"
+        into "\\wardir"
+        include '*.war'
+    }
+}
 
 war {
     baseName = 'SpringBoot'
@@ -59,11 +69,3 @@ dependencies {
 }
 
 
-task deploylocal() << {
-
-    copy {
-        from "${buildDir}\\libs\\exploded"
-        into "\\wardir"
-        include '*.war'
-    }
-}
