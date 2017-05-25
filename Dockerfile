@@ -2,7 +2,8 @@ FROM java
 FROM gradle
 
 WORKDIR /project
-VOLUME /home/gradlehome /project
+RUN mkdir /home/gradlehome
+VOLUME /home/gradlehome
 COPY  . /project
 
 
