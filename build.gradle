@@ -48,7 +48,6 @@ dependencies {
     // https://mvnrepository.com/artifact/com.querydsl/querydsl-jpa
 //    compile group: 'com.querydsl', name: 'querydsl-jpa', version: '4.1.4'
 
-
     //mysql 驱动
     runtime('mysql:mysql-connector-java')
     // druiduo作为数据库连接池管理
@@ -57,4 +56,14 @@ dependencies {
     testCompile('org.springframework.boot:spring-boot-starter-test')
 
 
+}
+
+
+task deploylocal() << {
+
+    copy {
+        from "${buildDir}\\libs\\exploded"
+        into "\\wardir"
+        include '*.war'
+    }
 }
