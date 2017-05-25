@@ -22,14 +22,9 @@ apply plugin: 'war'
 
 
 
-build.doLast {
-    print("sdljfdlsfjdskl")
-    copy {
-        from "${buildDir}\\libs\\exploded"
-        into "\\wardir"
-        include '*.war'
-    }
-}
+
+
+
 
 war {
     baseName = 'SpringBoot'
@@ -68,4 +63,13 @@ dependencies {
 
 }
 
+
+war.doLast {
+    print(" copying file...")
+    copy {
+        from "${buildDir}\\libs"
+        into "\\wardir"
+        include '*.war'
+    }
+}
 
