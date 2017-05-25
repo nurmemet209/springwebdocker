@@ -13,11 +13,11 @@ buildscript {
     }
 }
 
-
-//用于把源码打包成war
-apply plugin: 'war'
 //必须
 apply plugin: 'org.springframework.boot'
+//用于把源码打包成war
+apply plugin: 'war'
+
 
 
 
