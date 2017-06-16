@@ -9,5 +9,3 @@
 #WORKDIR /project
 #CMD ["gradle","build"]
 
-
-
