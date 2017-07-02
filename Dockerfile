@@ -1,7 +1,6 @@
 FROM java
 
 USER root
-
 WORKDIR /project
 COPY  . /project
 WORKDIR /wardir
